@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+from sklearn.cross_decomposition import CCA
 from scipy.spatial.distance import cdist
 from matplotlib.animation import FuncAnimation
 from IPython.display import HTML
