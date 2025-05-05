@@ -3,8 +3,8 @@ title: Central Bank Project
 emoji: 🏦
 colorFrom: blue
 colorTo: purple
-sdk: gradio
-app_file: app.py
+sdk: docker
+app_file: Dockerfile
 pinned: false
 ---
 
