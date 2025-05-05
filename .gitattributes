@@ -1,5 +1,0 @@
-original[[:space:]]data/ filter=lfs diff=lfs merge=lfs -text
-processed_data/ filter=lfs diff=lfs merge=lfs -text
-original[[:space:]]data/data_03_socio_economic_102_v20240607.xlsx filter=lfs diff=lfs merge=lfs -text
-processed_data/** filter=lfs diff=lfs merge=lfs -text
-data/*.hdf5 filter=lfs diff=lfs merge=lfs -text
