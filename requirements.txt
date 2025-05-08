@@ -3,7 +3,7 @@ jupyter-dash
 notebook
 ipykernel
 ipywidgets
-pandas==3.8.0
+pandas
 numpy==1.23.5
 dash
 plotly
@@ -17,4 +17,4 @@ statsmodels
 pychow
 requests
 streamlit
-tables==3.6.1
+tables==3.8.0
