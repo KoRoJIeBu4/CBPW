@@ -8,6 +8,7 @@ import numpy as np
 
 import dash
 from dash import dcc, html
+from jupyter_dash import JupyterDash
 
 import plotly.graph_objects as go
 import plotly.express as px
