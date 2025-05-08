@@ -1,59 +1,55 @@
-import pandas as pd
-from typing import *
-import numpy as np
-import dash
-from dash import dcc, html
-import plotly.graph_objects as go
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-from sklearn.cross_decomposition import CCA
-from scipy.spatial.distance import cdist
-from matplotlib.animation import FuncAnimation
-from IPython.display import HTML
-import mpld3
 import os
 import webbrowser
-import matplotlib
-import mplcursors
-import requests
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-# import pymc as pm
-# import arviz as az
 import time
 from datetime import datetime, timedelta
-from tqdm import tqdm
+
+import pandas as pd
+import numpy as np
+
+import dash
+from dash import dcc, html
+
+import plotly.graph_objects as go
+import plotly.express as px
+
+import seaborn as sns
+import matplotlib
+import matplotlib.pyplot as plt
+
+import mpld3
+import mplcursors
+
+import ipywidgets as widgets
+from ipywidgets import interactive, VBox, HBox, interact
+
+from scipy.spatial.distance import cdist
 from scipy import stats
-import statsmodels.api as sm
-from statsmodels.stats.diagnostic import linear_reset
-from statsmodels.formula.api import ols
-import statsmodels.stats.api as sms
-import scipy.stats as stats
-import networkx as nx
-from statsmodels.tsa.arima.model import ARIMA
+
+from sklearn.decomposition import PCA
+from sklearn.cross_decomposition import CCA
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import PolynomialFeatures
-from pychow import chow_test
-from statsmodels.tsa.statespace.sarimax import SARIMAX
-from statsmodels.api import OLS
-from pmdarima import auto_arima
+
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+from statsmodels.stats.diagnostic import linear_reset
+import statsmodels.stats.api as sms
+from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.stattools import adfuller
 import statsmodels.tsa.api as smt
-from statsmodels.stats.diagnostic import acorr_ljungbox
-from statsmodels.stats.stattools import jarque_bera
-from arch import arch_model
-from statsmodels.stats.diagnostic import het_white, het_breuschpagan, het_goldfeldquandt, het_arch
-import plotly.express as px
-import ipywidgets as widgets
-from IPython.display import display
+from statsmodels.stats.diagnostic import (
+    acorr_ljungbox,
+    het_white,
+    het_breuschpagan,
+    het_goldfeldquandt,
+    het_arch,
+)
+
+import pychow
+import requests
+
 import streamlit as st
-from ipywidgets import interactive, VBox, HBox
-from ipywidgets import interact
+
 
 # выкидываем пропуски
 def drop_missing_values(df, reference_columns):
@@ -656,7 +652,7 @@ def analyze_indicator_interactive(df):
     display(interactive_plot)
 
 
-def save_hdf5(data: Dict[int, pd.DataFrame], filename: str) -> None:
+def save_hdf5(data: dict[int, pd.DataFrame], filename: str) -> None:
     """
     Сохраняет словарь DataFrame в HDF5 файл.
 
@@ -668,7 +664,7 @@ def save_hdf5(data: Dict[int, pd.DataFrame], filename: str) -> None:
             store.put(f"year_{year}", df)
 
 
-def load_hdf5(filename: str) -> Dict[int, pd.DataFrame]:
+def load_hdf5(filename: str) -> dict[int, pd.DataFrame]:
     """
     Загружает данные из HDF5 файла в словарь DataFrame.
 
@@ -709,7 +705,7 @@ def remove_highly_correlated_features(df: pd.DataFrame, correlation_threshold=0.
         
     return df_reduced
 
-def process_dataframes_to_reduce_multicollinearity(dataframes: Dict[int, pd.DataFrame], correlation_threshold=0.9) -> Dict[int, pd.DataFrame]:
+def process_dataframes_to_reduce_multicollinearity(dataframes: dict[int, pd.DataFrame], correlation_threshold=0.9) -> dict[int, pd.DataFrame]:
     """
     Обрабатывает словарь датафреймов, удаляя высококоррелирующие признаки из каждого.
     

@@ -14,12 +14,6 @@ mplcursors
 scikit-learn
 scipy
 statsmodels
-pmdarima
-networkx
 pychow
-tqdm
-arch
 requests
-beautifulsoup4
-selenium
 streamlit
