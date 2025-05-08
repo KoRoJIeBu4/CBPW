@@ -27,4 +27,4 @@ COPY . .
 EXPOSE 7860
 
 # Запускаем Voilà на вашем ноутбуке
-CMD ["voila", "vidgets.ipynb", "--port=7860", "--no-browser", "--Voila.ip=0.0.0.0"]
+CMD ["voila", "vidgets.ipynb", "--port=7860", "--no-browser", "--show_tracebacks=True", "--Voila.ip=0.0.0.0"]
