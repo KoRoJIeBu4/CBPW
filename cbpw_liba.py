@@ -6,9 +6,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
 
-import dash
-from dash import dcc, html
-from jupyter_dash import JupyterDash
+from IPython.display import display, clear_output
 
 import plotly.graph_objects as go
 import plotly.express as px
