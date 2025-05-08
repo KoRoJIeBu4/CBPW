@@ -4,7 +4,7 @@ notebook
 ipykernel
 ipywidgets
 pandas
-numpy
+numpy==1.23.5
 dash
 plotly
 seaborn
@@ -17,4 +17,4 @@ statsmodels
 pychow
 requests
 streamlit
-tables
+tables==3.6.1
