@@ -1,29 +1,29 @@
-FROM python:3.10-slim
+# Берём Python 3.9 Slim (тогда pip найдёт подходящие колёса для voila)
+FROM python:3.9-slim
 
-# Устанавливаем зависимости для сборки и pip
+# Заливаем системные сборочные инструменты и обновляем pip
 RUN apt-get update && apt-get install -y \
     build-essential \
-    && pip install --upgrade pip
+  && pip install --upgrade pip
 
 WORKDIR /app
 
-# Копируем и устанавливаем зависимости проекта
+# Копируем зависимости и ставим их
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --no-cache-dir voila
-# Устанавливаем необходимые компоненты для работы Voilà
-# jupyter notebook + ipykernel нужны для запуска ядра Python
+# Устанавливаем Voilà и всё, что нужно для Dash в Voilà
 RUN pip install --no-cache-dir \
     voila \
     notebook \
-    ipykernel
+    ipykernel \
+    jupyter-dash
 
-# Копируем весь код приложения
+# Копируем код
 COPY . .
 
-# Открываем порт для приложения (Render использует его автоматически)
+# Открываем порт — на Render он будет доступен на $PORT
 EXPOSE 7860
 
-# Запуск Voilà на указанном ноутбуке
+# Запускаем Voilà на вашем ноутбуке
 CMD ["voila", "vidgets.ipynb", "--port=7860", "--no-browser", "--Voila.ip=0.0.0.0"]
