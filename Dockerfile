@@ -1,3 +1,5 @@
+FROM python:3.10-slim
+
 # Устанавливаем зависимости для сборки и pip
 RUN apt-get update && apt-get install -y \
     build-essential \
