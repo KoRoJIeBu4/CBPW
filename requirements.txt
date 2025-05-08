@@ -1,8 +1,5 @@
-# Базовые научные библиотеки
 pandas
 numpy
-
-# Визуализация
 plotly
 dash
 jupyter-dash
@@ -11,33 +8,21 @@ matplotlib
 mpld3
 mplcursors
 ipywidgets
-
-# Scikit-learn
 scikit-learn
-
-# SciPy и смежные
 scipy
 statsmodels
 pmdarima
 networkx
 pychow
 tqdm
-
-# Bayesian / MCMC
 pymc
 arviz
 arch
-
-# Веб-скрапинг и автоматизация
 requests
 beautifulsoup4
 selenium
-
-# Jupyter / Voilà
 notebook
 ipykernel
 voila
 voila-dash
-
-# Удобства
 streamlit
