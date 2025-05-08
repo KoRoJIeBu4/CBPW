@@ -1,10 +1,11 @@
 # Берём Python 3.9 Slim (тогда pip найдёт подходящие колёса для voila)
 FROM python:3.9-slim
 
-# Заливаем системные сборочные инструменты и обновляем pip
+# Устанавливаем зависимости для сборки, pip и HDF5 (для PyTables)
 RUN apt-get update && apt-get install -y \
     build-essential \
-  && pip install --upgrade pip
+    libhdf5-dev \
+    && pip install --upgrade pip
 
 WORKDIR /app
 

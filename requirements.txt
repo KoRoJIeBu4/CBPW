@@ -17,4 +17,4 @@ statsmodels
 pychow
 requests
 streamlit
-pytables
+tables
