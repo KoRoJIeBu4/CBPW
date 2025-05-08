@@ -11,12 +11,15 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Устанавливаем необходимые компоненты для работы Voilà
+# Устанавливаем необходимые компоненты для работы Voilà и поддержки Dash внутри Voila
 # jupyter notebook + ipykernel нужны для запуска ядра Python
+# jupyter-dash и voila-dash добавляют поддержку Dash-приложений в Voilà
 RUN pip install --no-cache-dir \
     voila \
     notebook \
-    ipykernel
+    ipykernel \
+    jupyter-dash \
+    voila-dash
 
 # Копируем весь код приложения
 COPY . .

@@ -1,21 +1,43 @@
-voila
+# Базовые научные библиотеки
 pandas
 numpy
-dash
+
+# Визуализация
 plotly
+dash
+jupyter-dash
 seaborn
 matplotlib
-scikit-learn
-scipy
-ipython
 mpld3
 mplcursors
-selenium
+ipywidgets
+
+# Scikit-learn
+scikit-learn
+
+# SciPy и смежные
+scipy
+statsmodels
+pmdarima
+networkx
+pychow
+tqdm
+
+# Bayesian / MCMC
 pymc
 arviz
-tqdm
-statsmodels
-networkx
-pmdarima
 arch
-ipywidgets
+
+# Веб-скрапинг и автоматизация
+requests
+beautifulsoup4
+selenium
+
+# Jupyter / Voilà
+notebook
+ipykernel
+voila
+voila-dash
+
+# Удобства
+streamlit
