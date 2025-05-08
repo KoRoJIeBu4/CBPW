@@ -1,5 +1,3 @@
-FROM python:3.10-slim
-
 # Устанавливаем зависимости для сборки и pip
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -11,12 +9,13 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Устанавливаем Voilà и всё, что нужно для запуска ядра и Dash внутри Voilà
+RUN pip install --no-cache-dir voila
+# Устанавливаем необходимые компоненты для работы Voilà
+# jupyter notebook + ipykernel нужны для запуска ядра Python
 RUN pip install --no-cache-dir \
     voila \
     notebook \
-    ipykernel \
-    jupyter-dash
+    ipykernel
 
 # Копируем весь код приложения
 COPY . .
