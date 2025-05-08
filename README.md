@@ -1,7 +1,6 @@
 # CBPW  
 Анализ зависимостей социально‑экономического развития регионов и уровня развития региональных финансовых рынков  
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/KoRoJIeBu4/CBPW/main?urlpath=voila%2Fvidgets.ipynb)
 
 ---
 
@@ -19,8 +18,3 @@
 
 ---
 
-## Запуск через Binder + Voilà
-
-1. Убедитесь, что в корне проекта в файле `requirements.txt` есть строка:
-   ```text
-   voila

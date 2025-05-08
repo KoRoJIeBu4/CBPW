@@ -10,8 +10,6 @@ scipy
 ipython
 mpld3
 mplcursors
-requests
-beautifulsoup4
 selenium
 pymc
 arviz
@@ -21,4 +19,3 @@ networkx
 pmdarima
 arch
 ipywidgets
-streamlit
