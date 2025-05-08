@@ -1,11 +1,9 @@
 voila
-jupyter-dash
 notebook
 ipykernel
 ipywidgets
 pandas
 numpy==1.23.5
-dash
 plotly
 seaborn
 matplotlib

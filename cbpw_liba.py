@@ -903,3 +903,24 @@ def compose_SFIIRD(SFIIRD, alpha=0.5):
     final_index = alpha * FIIRD + (1 - alpha) * SIIRD
     return final_index
 
+
+def make_clear_domen(domen: dict[int: pd.DataFrame], destimulants: list[str] = None):
+    '''
+    domen: dict[int: pd.DataFrame]
+    destimulants: list[str]
+
+    Функция приводит данные к каноничному формату, где отсутствует инверсия показателей
+    '''
+    if destimulants is None:
+        clear_domen = {}
+        for year, df in domen.items():
+            clear_domen[year] = df.copy()
+        return clear_domen
+    else:
+        columns = domen[2000].columns
+        destimulants = columns.intersection(set(destimulants))
+        clear_domen = {}
+        for year, df in domen.items():
+            clear_domen[year] = df.copy()
+            clear_domen[year][destimulants] = -clear_domen[year][destimulants] 
+        return clear_domen
