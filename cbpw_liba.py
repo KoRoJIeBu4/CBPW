@@ -1,3 +1,10 @@
+import warnings
+warnings.filterwarnings('ignore')
+
+import streamlit as st
+import time
+from stqdm import stqdm
+
 import os
 import webbrowser
 import time
@@ -46,8 +53,6 @@ from statsmodels.stats.diagnostic import (
 
 import pychow
 import requests
-
-import streamlit as st
 
 
 # выкидываем пропуски
