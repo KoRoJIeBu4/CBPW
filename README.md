@@ -33,3 +33,6 @@
 2. **Запуск интерфейса**
    ```bash
    streamlit run app.py
+3. **Онлайн-доступ**
+   Проект размещен на Hugging Face Spaces и доступен по ссылке:
+   🌐 https://huggingface.co/spaces/KoRoJIeBu4/CBPW
